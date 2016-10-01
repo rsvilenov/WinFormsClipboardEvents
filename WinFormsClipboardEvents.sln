@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBoxClipboardEvents.Demo", "TextBoxClipboardEvents.Demo\TextBoxClipboardEvents.Demo.csproj", "{B9149492-0905-4079-9C12-639A7A6602DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBoxClipboardEvents", "TextBoxClipboardEvents\TextBoxClipboardEvents.csproj", "{80773A99-C0C0-4262-9228-FE8B0F3DA059}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9149492-0905-4079-9C12-639A7A6602DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9149492-0905-4079-9C12-639A7A6602DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9149492-0905-4079-9C12-639A7A6602DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9149492-0905-4079-9C12-639A7A6602DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80773A99-C0C0-4262-9228-FE8B0F3DA059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80773A99-C0C0-4262-9228-FE8B0F3DA059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80773A99-C0C0-4262-9228-FE8B0F3DA059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80773A99-C0C0-4262-9228-FE8B0F3DA059}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
