@@ -36,26 +36,15 @@ namespace TextBoxClipboardEvents.Demo
                 // if the user says No, cancel the operation
                 e.Cancel = true;
 
-                cancelledLabel.Text = String.Format("{0} operation cancelled.", e.Type.ToString());
-                cancelledLabel.Visible = true;
-                completedLabel.Visible = false;
-                timer1.Start();
+                string text = String.Format("{0} operation cancelled.", e.Type.ToString());
+                ShowLabel(text, true);
             }
         }
 
         private void extTextBox1_ClipboardOperationComplete(object sender, WinformPasteEvents.ClipboardOperationCompleteEventArgs e)
         {
-            completedLabel.Text = String.Format("{0} operation completed.", e.Type.ToString());
-            completedLabel.Visible = true;
-            cancelledLabel.Visible = false;
-            timer1.Start();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            completedLabel.Visible = false;
-            cancelledLabel.Visible = false;
-            timer1.Stop();
+            string text = String.Format("{0} operation completed.", e.Type.ToString());
+            ShowLabel(text, false);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -68,6 +57,30 @@ namespace TextBoxClipboardEvents.Demo
             LinkLabel.Link link = new LinkLabel.Link();
             link.LinkData = "http://github.com/rsvilenov/WinformsClipboardEvents";
             linkLabel1.Links.Add(link);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            completedLabel.Visible = false;
+            cancelledLabel.Visible = false;
+            timer1.Stop();
+        }
+
+        private void ShowLabel(string text, bool isCancelled)
+        {
+            if (isCancelled)
+            {
+                cancelledLabel.Text = text;
+            }
+            else
+            {
+                completedLabel.Text = text;
+            }
+
+            completedLabel.Visible = !isCancelled;
+            cancelledLabel.Visible = isCancelled;
+            timer1.Stop();
+            timer1.Start();
         }
     }
 }
