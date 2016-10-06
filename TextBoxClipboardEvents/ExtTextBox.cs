@@ -80,8 +80,7 @@ namespace WinformPasteEvents
             {
                 var args = new ClipboardOperationEventArgs(text, type);
 
-                if (ClipboardOperationBegin != null)
-                    ClipboardOperationBegin(this, args);
+                ClipboardOperationBegin?.Invoke(this, args);
 
                 if (!args.Cancel)
                 {
@@ -90,8 +89,7 @@ namespace WinformPasteEvents
                     base.WndProc(ref m);
 
                     // raise the ClipboardOperationComplete event
-                    if (ClipboardOperationComplete != null)
-                        ClipboardOperationComplete(this, new ClipboardOperationCompleteEventArgs(text, type));
+                    ClipboardOperationComplete?.Invoke(this, new ClipboardOperationCompleteEventArgs(text, type));
                 }
             }
         }

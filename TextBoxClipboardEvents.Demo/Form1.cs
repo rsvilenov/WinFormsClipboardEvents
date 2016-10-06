@@ -25,7 +25,7 @@ namespace TextBoxClipboardEvents.Demo
 
         private void extTextBox1_ClipboardOperationBegin(object sender, WinformPasteEvents.ClipboardOperationEventArgs e)
         {
-            string mboxText = String.Format("Do you really want to {0} \"{1}{2}\"?", 
+            string mboxText = string.Format("Do you really want to {0} \"{1}{2}\"?", 
                 e.Type.ToString(),
                 e.Text.Substring(0, Math.Min(e.Text.Length, 10)),
                 e.Text.Length > 10 ? "..." : "");
@@ -36,14 +36,14 @@ namespace TextBoxClipboardEvents.Demo
                 // if the user says No, cancel the operation
                 e.Cancel = true;
 
-                string text = String.Format("{0} operation cancelled.", e.Type.ToString());
+                string text = $"{e.Type} operation cancelled.";
                 ShowLabel(text, true);
             }
         }
 
         private void extTextBox1_ClipboardOperationComplete(object sender, WinformPasteEvents.ClipboardOperationCompleteEventArgs e)
         {
-            string text = String.Format("{0} operation completed.", e.Type.ToString());
+            string text = $"{e.Type} operation completed.";
             ShowLabel(text, false);
         }
 
